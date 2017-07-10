@@ -12,11 +12,12 @@ Follow this tutorial at https://cloud.google.com/container-engine/docs/tutorials
 ## Demo 2: Load Balancing with nginx using an ingress object
 
 See info on ingress object [here](http://blog.kubernetes.io/2016/03/Kubernetes-1.2-and-simplifying-advanced-networking-with-Ingress.html)
-Kuberenetes supports by default a network load balancer. For HTTP load balancer, you should use an Ingress object instead
+
+Kubernetes supports by default a network load balancer. For HTTP load balancer, you should use an Ingress object instead
 
 ```
       # Create cluster on Google Container Engine (by default, it creates 3 nodes)
-      gcloud container clusters create demo-nginx 
+      gcloud container clusters create demo-nginx
 	  # OPTIONAL: if more than 1 cluster, make sure you will act on your cluster
 	  gcloud container clusters get-credentials demo-nginx
 	  # Create a pod with a single nginx server
@@ -31,6 +32,11 @@ Kuberenetes supports by default a network load balancer. For HTTP load balancer,
       kubectl get ingress basic-ingress --watch
       # Find IP address of the ingress object (access with http://<IP_ADDRESS> to see your nginx running)
       kubectl get ingress basic-ingress
+      # Delete the ingress object
+      kubectl delete -f basic-ingress.yaml
+      # Shut down and delete nginx
+      kubectl delete -f basic-ingress.yaml
+      
       
 ```
 
