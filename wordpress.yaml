@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: wordpress
 spec:
-  replicas: 4 
+  replicas: 2
   template:
     metadata:
       labels:
@@ -11,12 +11,12 @@ spec:
     spec:
       containers:
         # documentation for this image: https://hub.docker.com/_/wordpress/
-        - image: wordpress:4.5
+        - image: wordpress:4
           name: wordpress
           env:
             - name: WORDPRESS_DB_PASSWORD
               # Change this - must match mysql.yaml password.
-              value: demo1234
+              value: popotitos42
           ports:
             - containerPort: 80
               name: wordpress
