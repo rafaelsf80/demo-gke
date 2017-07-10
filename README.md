@@ -9,7 +9,7 @@ Refer to the files in this directory, specially the script
 Follow this tutorial at https://cloud.google.com/container-engine/docs/tutorials/persistent-disk/
 
 
-## Demo 2: Load Balancing with nginx and an ingress object
+## Demo 2: Load Balancing with nginx using an ingress object
 
 See info on ingress object [here](http://blog.kubernetes.io/2016/03/Kubernetes-1.2-and-simplifying-advanced-networking-with-Ingress.html)
 Kuberenetes supports by default a network load balancer. For HTTP load balancer, you should use an Ingress object instead
@@ -17,7 +17,7 @@ Kuberenetes supports by default a network load balancer. For HTTP load balancer,
 ```
       # Create cluster on Google Container Engine (by default, it creates 3 nodes)
       gcloud container clusters create demo-nginx 
-	  # OPTIONAL: if more than 1 cluster
+	  # OPTIONAL: if more than 1 cluster, make sure you will act on your cluster
 	  gcloud container clusters get-credentials demo-nginx
 	  # Create a pod with a single nginx server
 	  kubectl run nginx --image=nginx --port=80
