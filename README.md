@@ -4,9 +4,9 @@
 
 ## Demo 1: Using Persistent Disks with WordPress and MySQL
 
-Refer to the files in this directory, specially the script
+Refer to the files in this directory, specially [the script](https://github.com/rafaelsf80/demo-gke/blob/master/script-wordpress.sh)
 
-Follow this tutorial at https://cloud.google.com/container-engine/docs/tutorials/persistent-disk/
+Follow [this tutorial](https://cloud.google.com/container-engine/docs/tutorials/persistent-disk/)
 
 
 ## Demo 2: Load Balancing with nginx using an ingress object
@@ -18,12 +18,12 @@ Kubernetes supports by default a network load balancer. For HTTP load balancer, 
 ```
       # Create cluster on Google Container Engine (by default, it creates 3 nodes)
       gcloud container clusters create demo-nginx
-	  # OPTIONAL: if more than 1 cluster, make sure you will act on your cluster
-	  gcloud container clusters get-credentials demo-nginx
-	  # Create a pod with a single nginx server
-	  kubectl run nginx --image=nginx --port=80
-	  # Create pods with nginx, note type is not LoadBalancer, but NodePort
-	  kubectl expose deployment nginx --target-port=80 --type=NodePort
+      # OPTIONAL: if more than 1 cluster, make sure you will act on your cluster
+      gcloud container clusters get-credentials demo-nginx
+      # Create a pod with a single nginx server
+      kubectl run nginx --image=nginx --port=80
+      # Create pods with nginx, note type is not LoadBalancer, but NodePort
+      kubectl expose deployment nginx --target-port=80 --type=NodePort
       # See status of deployment
       kubectl get pods -owide
       # Create the ingress
